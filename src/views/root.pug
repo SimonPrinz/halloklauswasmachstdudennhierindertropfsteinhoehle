@@ -1,9 +1,17 @@
 doctype html
-html
+html(lang='de')
     head
+        meta(name='viewport' content='width=device-width')
         meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
         title Hallo Klaus, was machst Du denn hier in der Tropfsteinhöhle ? - Ja, hallo Erwin...
-        link(rel='stylesheet' href='/assets/main.css')
+        meta(name='description' content='Hallo Klaus, was machst Du denn hier in der Tropfsteinhöhle ? - Ja, hallo Erwin...')
+        link(rel='preload' href='/assets/main.css' as='style' onload='this.onload=null;this.rel="stylesheet";')
+        style.
+            body {
+            	background: #003366;
+            	width: 100%; height: 100%;
+            	width: 100vw; height: 100vh;
+            }
     body
         audio
             source(src='/assets/hoehle.wav' type='audio/wav')

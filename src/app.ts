@@ -9,7 +9,14 @@ app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 
-app.use('/assets', staticRoute(__dirname + '/assets'));
+app.use('/robots.txt', (req, res, next) => {
+    res.type('text/plain');
+    res.send('User-Agent: *');
+});
+app.use('/favicon.ico', (req, res, next) => {
+	res.sendFile(__dirname + '/assets/play.png');
+});
+app.use('/assets', staticRoute(__dirname + '/assets', { maxAge: 31557600 }));
 
 app.get('/', (req, res) => {
     res.render('root');
