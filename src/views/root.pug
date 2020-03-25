@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+        title Hallo Klaus, was machst Du denn hier in der Tropfsteinhöhle ? - Ja, hallo Erwin...
+        link(rel='stylesheet' href='/assets/main.css')
+    body
+        audio
+            source(src='/assets/hoehle.wav' type='audio/wav')
+        script.
+            (function() {
+                let audio = document.querySelector('audio');
+                let body = document.querySelector('body');
+                let task = audio.play();
+                if (task !== undefined) {
+                    task.catch(function(error) {
+                        body.classList.add('permission-missing');
+                    });
+                }
+                body.onclick = function() {
+                    body.classList.remove('permission-missing');
+                    audio.currentTime = 0;
+                    audio.play();
+                };
+            })();

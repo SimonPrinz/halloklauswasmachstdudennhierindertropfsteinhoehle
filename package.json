@@ -1,0 +1,40 @@
+{
+  "name": "halloklauswasmachstdudennhierindertropfsteinhoehle",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "gulp build && tsc",
+    "watch": "npm run build && concurrently npm:watch:server npm:watch:gulp npm:watch:node",
+    "watch:node": "nodemon dist/server.js",
+    "watch:server": "tsc -w",
+    "watch:gulp": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SimonPrinz/halloklauswasmachstdudennhierindertropfsteinhoehle.git"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ldapjs": "^1.0.2",
+    "pug": "^2.0.4",
+    "morgan": "^1.10.0"
+  },
+  "license": "Private License",
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.3",
+    "@types/ldapjs": "^1.0.5",
+    "@types/node": "^13.9.1",
+    "@types/morgan": "^1.9.0",
+    "concurrently": "^5.1.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  }
+}
